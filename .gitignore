@@ -1,0 +1,18 @@
+Pods
+.DS_Store
+
+# xcode noise
+build/*
+xcuserdata
+
+# fastlane specific
+fastlane/report.xml
+fastlane/builds
+fastlane/test_output
+
+fastlane/.env
+fastlane/screenshots/**/*.png
+fastlane/screenshots/screenshots.html
+
+#local configuration
+Configuration/configuration_local.json
