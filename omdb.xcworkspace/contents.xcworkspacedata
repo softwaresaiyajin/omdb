@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:"
+      name = "Services">
+      <FileRef
+         location = "group:Packages/OmdbSDK">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:omdb.xcodeproj">
+   </FileRef>
+</Workspace>
