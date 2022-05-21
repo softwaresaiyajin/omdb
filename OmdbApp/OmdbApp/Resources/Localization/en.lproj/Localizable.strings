@@ -1,5 +1,4 @@
 "movie_list_search_placeholder_text" = "Search title or year";
-"movie_list_hud_text_empty_query" = "Please enter text";
 "movie_list_hud_text_no_movies_found" = "No movies found";
 
 "movie_detail_header_cast" = "Cast";

@@ -1,5 +1,6 @@
 import SwiftUI
 import Combine
+import InternationalizationServiceInterface
 import AppUI
 
 struct MovieListView<
@@ -23,7 +24,11 @@ struct MovieListView<
                 .navigationTitle("Omdb Movies")
         }
         .onAppear(perform: viewModel.load)
-        .searchable(text: $viewModel.searchText, prompt: "Search title or year")
+        .searchable(
+            text: $viewModel.searchText,
+            placement: .navigationBarDrawer(displayMode: .always),
+            prompt: ~Slug.searchPlaceholder
+        )
     }
     
     @ViewBuilder
@@ -36,7 +41,7 @@ struct MovieListView<
     }
     
     private var emptyView: some View {
-        Text(viewModel.searchText.isEmpty ? "Please enter text" : "No movies found")
+        Text(~Slug.noMoviesFound)
             .font(.headline)
             .foregroundColor(.primary)
     }

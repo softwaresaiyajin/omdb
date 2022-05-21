@@ -14,13 +14,21 @@ final class MovieListViewModel: MovieListViewModelInterface {
     @Published private(set) var items: [MovieServiceInterface.MovieItemMetadata] = []
     
     private let movieManager: MovieManagerInterface
+    private let defaultItems: [MovieServiceInterface.MovieItemMetadata]
     private var subscriptions: Set<AnyCancellable> = []
     
     init(movieManager: MovieManagerInterface) {
         self.movieManager = movieManager
+        defaultItems = movieManager.getDefaultItems()
     }
     
     func load() {
+        guard subscriptions.isEmpty else {
+            return
+        }
+        
+        showDefaultItems()
+
         $searchText
             .debounce(for: .milliseconds(800), scheduler: RunLoop.main)
             .removeDuplicates()
@@ -28,7 +36,15 @@ final class MovieListViewModel: MovieListViewModelInterface {
             .store(in: &subscriptions)
     }
     
+    private func showDefaultItems() {
+        items = defaultItems
+    }
+    
     private func getItems(query: String) {
+        guard !query.isEmpty else {
+            return showDefaultItems()
+        }
+
         movieManager
             .getItems(searchText: query)
             .receive(on: DispatchQueue.main)

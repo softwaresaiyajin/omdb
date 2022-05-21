@@ -31,4 +31,8 @@ final class MovieManager: MovieManagerInterface {
             .map(Factory.makeMovieItemDetailedInfo)
             .eraseToAnyPublisher()
     }
+    
+    func getDefaultItems() -> [MovieServiceInterface.MovieItemMetadata] {
+        Factory.makeDefaultMovieItemsMetadata()
+    }
 }
