@@ -26,7 +26,7 @@ public final class OmdbAPIClient {
 
 // MARK: endpoints
 public extension OmdbAPIClient {
-    func getMovieItem(filter: MovieItemFilter) -> AnyPublisher<MovieItemDetail, AFError> {
+    func getMovieItem(filter: MovieItemFilter) -> AnyPublisher<MovieItemDetailedInfo, AFError> {
         doRequest(Router.getMovieItem(filter: filter))
     }
     

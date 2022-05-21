@@ -4,7 +4,7 @@ public struct MovieCollection: Decodable {
         case responseString = "Response"
     }
     
-    public let items: [MovieItemBasicInfo]
+    public let items: [MovieItemMetadata]
     private let responseString: String
     
     public var response: Bool {

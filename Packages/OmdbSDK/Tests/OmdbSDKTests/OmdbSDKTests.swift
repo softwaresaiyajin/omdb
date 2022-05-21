@@ -25,16 +25,4 @@ final class OmdbSDKTests: XCTestCase {
         )
         XCTAssertEqual(result.response, true)
     }
-    
-    /**
-     func getMovieItem(filter: MovieItemFilter) -> DataResponsePublisher<MovieItem> {
-         doRequest(Router.getMovieItem(filter: filter))
-     }
-     
-     func getMovieCollection(
-         filter: MovieCollectionFilter
-     ) -> DataResponsePublisher<MovieCollection> {
-         doRequest(Router.getMovieCollection(filter: filter))
-     }
-     */
 }

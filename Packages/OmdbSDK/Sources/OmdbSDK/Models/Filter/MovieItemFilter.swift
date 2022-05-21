@@ -28,3 +28,25 @@ public struct MovieItemFilter: Encodable {
     }
 }
 
+public struct MoviePlot: RawRepresentable, Decodable {
+    public static let short: Self = .init(rawValue: "short")
+    public static let full: Self = .init(rawValue: "full")
+
+    public let rawValue: String
+    
+    public init(rawValue: String) {
+        self.rawValue = rawValue
+    }
+}
+
+public struct MovieType: RawRepresentable, Decodable  {
+    public static let film: Self = .init(rawValue: "movie")
+    public static let series: Self = .init(rawValue: "series")
+    public static let episode: Self = .init(rawValue: "episode")
+
+    public let rawValue: String
+    
+    public init(rawValue: String) {
+        self.rawValue = rawValue
+    }
+}

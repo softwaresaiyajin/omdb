@@ -13,7 +13,7 @@ public struct MovieCollectionFilter: Encodable {
     
     public init(
         text: String? = nil,
-        type: MovieType? = nil,
+        type: MoviePlot? = nil,
         yearOfRelease: String? = nil,
         page: Int = 1
     ) {
@@ -23,4 +23,3 @@ public struct MovieCollectionFilter: Encodable {
         self.page = page
     }
 }
-

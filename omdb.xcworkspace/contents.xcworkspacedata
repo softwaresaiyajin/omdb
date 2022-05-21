@@ -2,6 +2,13 @@
 <Workspace
    version = "1.0">
    <Group
+      location = "container:"
+      name = "Interfaces">
+      <FileRef
+         location = "group:Packages/MovieServiceInterface">
+      </FileRef>
+   </Group>
+   <Group
       location = "group:"
       name = "Services">
       <FileRef
