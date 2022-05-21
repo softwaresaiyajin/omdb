@@ -20,8 +20,13 @@ struct MovieListView<
     
     var body: some View {
         NavigationView {
-            contentView
-                .navigationTitle("Omdb Movies")
+            ZStack {
+                Color.primaryBackgroundColor.ignoresSafeArea()
+
+                contentView
+            }
+            .background(Color.primaryBackgroundColor.ignoresSafeArea())
+            .navigationTitle("Omdb Movies")
         }
         .onAppear {
             UITableView.appearance().backgroundColor = .clear

@@ -13,10 +13,13 @@ struct MovieDetailView<
     }
     
     var body: some View {
-        contentView
-            .background(Color.primaryBackgroundColor)
-            .onAppear(perform: viewModel.load)
-            .navigationTitle(viewModel.item?.title ?? ~Slug.loadingInfo)
+        ZStack {
+            Color.primaryBackgroundColor.ignoresSafeArea()
+            
+            contentView
+        }
+        .onAppear(perform: viewModel.load)
+        .navigationTitle(viewModel.item?.title ?? "")
     }
     
     @ViewBuilder
