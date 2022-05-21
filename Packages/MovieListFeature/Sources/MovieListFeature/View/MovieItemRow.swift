@@ -6,13 +6,13 @@ struct MovieItemRow: View {
     let data: MovieItemMetadata
     
     var body: some View {
-        VStack(spacing: .spacingS) {
+        VStack(alignment: .leading, spacing: .spacingS) {
             Text(data.title)
                 .foregroundColor(.black)
             
             Text(data.year)
                 .foregroundColor(.gray)
         }
-        .padding(.spacingM)
+        .padding(.spacingS)
     }
 }

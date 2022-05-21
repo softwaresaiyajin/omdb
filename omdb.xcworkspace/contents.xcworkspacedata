@@ -28,6 +28,9 @@
       location = "container:"
       name = "FeatureLayer">
       <FileRef
+         location = "group:OmdbApp/../Packages/MovieDetailFeature">
+      </FileRef>
+      <FileRef
          location = "group:Packages/MovieListFeature">
       </FileRef>
    </Group>
@@ -35,7 +38,7 @@
       location = "container:"
       name = "AppLayer">
       <FileRef
-         location = "group:omdb.xcodeproj">
+         location = "group:OmdbApp/OmdbApp.xcodeproj">
       </FileRef>
    </Group>
 </Workspace>
