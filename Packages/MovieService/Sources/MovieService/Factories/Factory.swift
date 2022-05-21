@@ -9,7 +9,8 @@ struct Factory {
             .init(
                 id: item.id,
                 title: item.title,
-                year: item.year
+                year: item.year,
+                poster: item.poster
             )
         }
     }

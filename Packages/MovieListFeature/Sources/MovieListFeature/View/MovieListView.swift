@@ -24,6 +24,11 @@ public struct MovieListView<
         .searchable(text: $viewModel.searchText, prompt: "Search title or year")
     }
     
+    private var emptyView: some View {
+        Text("")
+            .foregroundColor(.black)
+    }
+    
     private var listView: some View {
         List {
             ForEach(viewModel.items, id: \.self) { item in
