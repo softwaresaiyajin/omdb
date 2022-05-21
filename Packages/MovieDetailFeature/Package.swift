@@ -12,6 +12,7 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../MovieServiceInterface"),
+        .package(path: "../InternationalizationServiceInterface"),
         .package(path: "../AppUI"),
         .package(path: "../AppCore"),
     ],
@@ -20,6 +21,7 @@ let package = Package(
             name: "MovieDetailFeature",
             dependencies: [
                 "MovieServiceInterface",
+                "InternationalizationServiceInterface",
                 "AppUI",
                 "AppCore"
             ]

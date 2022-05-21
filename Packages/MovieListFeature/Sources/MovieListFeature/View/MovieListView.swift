@@ -38,7 +38,7 @@ struct MovieListView<
     private var emptyView: some View {
         Text(viewModel.searchText.isEmpty ? "Please enter text" : "No movies found")
             .font(.headline)
-            .foregroundColor(.black)
+            .foregroundColor(.primary)
     }
     
     private var listView: some View {

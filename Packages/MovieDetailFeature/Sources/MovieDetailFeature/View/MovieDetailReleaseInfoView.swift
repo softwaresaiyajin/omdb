@@ -1,5 +1,6 @@
 import SwiftUI
 import AppUI
+import InternationalizationServiceInterface
 
 struct MovieDetailReleaseInfoView: View {
     let year: String
@@ -8,13 +9,13 @@ struct MovieDetailReleaseInfoView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: .spacingS) {
-            CommonHeaderView(title: "Details")
+            CommonHeaderView(title: ~Slug.details)
             
-            makeInfoView(title: "Year Released", value: year)
+            makeInfoView(title: ~Slug.yearReleased, value: year)
             
-            makeInfoView(title: "Language", value: language)
+            makeInfoView(title: ~Slug.language, value: language)
             
-            makeInfoView(title: "Duration", value: duration)
+            makeInfoView(title: ~Slug.duration, value: duration)
         }
         .padding(.spacingM)
         .background(Color.rowBackgroundColor)

@@ -11,6 +11,8 @@
 		7476B211283906210004AE3C /* MainViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7476B210283906210004AE3C /* MainViewFactory.swift */; };
 		7476B213283906F10004AE3C /* MainViewFactory+MovieListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7476B212283906F10004AE3C /* MainViewFactory+MovieListFeature.swift */; };
 		7476B217283943180004AE3C /* MovieDetailFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 7476B216283943180004AE3C /* MovieDetailFeature */; };
+		7476B21E283959410004AE3C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7476B220283959410004AE3C /* Localizable.strings */; };
+		7476B22628395DFE0004AE3C /* InternationalizationService in Frameworks */ = {isa = PBXBuildFile; productRef = 7476B22528395DFE0004AE3C /* InternationalizationService */; };
 		74DFB44D2838FC1B00CB225F /* OmdbApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DFB44C2838FC1B00CB225F /* OmdbApp.swift */; };
 		74DFB4512838FC1C00CB225F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74DFB4502838FC1C00CB225F /* Assets.xcassets */; };
 		74DFB4542838FC1C00CB225F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74DFB4532838FC1C00CB225F /* Preview Assets.xcassets */; };
@@ -23,6 +25,7 @@
 		7476B20D2838FE010004AE3C /* DI+Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DI+Registration.swift"; sourceTree = "<group>"; };
 		7476B210283906210004AE3C /* MainViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewFactory.swift; sourceTree = "<group>"; };
 		7476B212283906F10004AE3C /* MainViewFactory+MovieListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewFactory+MovieListFeature.swift"; sourceTree = "<group>"; };
+		7476B21F283959410004AE3C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		74DFB4492838FC1B00CB225F /* OmdbApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmdbApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74DFB44C2838FC1B00CB225F /* OmdbApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmdbApp.swift; sourceTree = "<group>"; };
 		74DFB4502838FC1C00CB225F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,6 +40,7 @@
 				74DFB45E2838FCD300CB225F /* MovieListFeature in Frameworks */,
 				7476B217283943180004AE3C /* MovieDetailFeature in Frameworks */,
 				74DFB4602838FCD400CB225F /* MovieService in Frameworks */,
+				7476B22628395DFE0004AE3C /* InternationalizationService in Frameworks */,
 				74DFB45C2838FCD300CB225F /* AppCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,6 +65,22 @@
 			path = RoutingConformances;
 			sourceTree = "<group>";
 		};
+		7476B2182839582C0004AE3C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7476B219283958320004AE3C /* Localization */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7476B219283958320004AE3C /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				7476B220283959410004AE3C /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		74DFB4402838FC1B00CB225F = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +101,7 @@
 		74DFB44B2838FC1B00CB225F /* OmdbApp */ = {
 			isa = PBXGroup;
 			children = (
+				7476B2182839582C0004AE3C /* Resources */,
 				7476B20F283905E80004AE3C /* RoutingConformances */,
 				7476B20C2838FDE90004AE3C /* DI */,
 				74DFB44C2838FC1B00CB225F /* OmdbApp.swift */,
@@ -126,6 +147,7 @@
 				74DFB45D2838FCD300CB225F /* MovieListFeature */,
 				74DFB45F2838FCD400CB225F /* MovieService */,
 				7476B216283943180004AE3C /* MovieDetailFeature */,
+				7476B22528395DFE0004AE3C /* InternationalizationService */,
 			);
 			productName = OmdbApp;
 			productReference = 74DFB4492838FC1B00CB225F /* OmdbApp.app */;
@@ -152,7 +174,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = 74DFB4402838FC1B00CB225F;
 			productRefGroup = 74DFB44A2838FC1B00CB225F /* Products */;
@@ -170,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74DFB4542838FC1C00CB225F /* Preview Assets.xcassets in Resources */,
+				7476B21E283959410004AE3C /* Localizable.strings in Resources */,
 				74DFB4512838FC1C00CB225F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,6 +211,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7476B220283959410004AE3C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7476B21F283959410004AE3C /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		74DFB4552838FC1C00CB225F /* Debug */ = {
@@ -388,6 +421,10 @@
 		7476B216283943180004AE3C /* MovieDetailFeature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MovieDetailFeature;
+		};
+		7476B22528395DFE0004AE3C /* InternationalizationService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = InternationalizationService;
 		};
 		74DFB45B2838FCD300CB225F /* AppCore */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -1,5 +1,6 @@
 import SwiftUI
 import AppUI
+import InternationalizationServiceInterface
 
 struct MovieDetailCastView: View {
     let actors: [String]
@@ -14,7 +15,7 @@ struct MovieDetailCastView: View {
     
     private var contentView: some View {
         VStack(alignment: .leading, spacing: .spacingS) {
-            CommonHeaderView(title: "Cast")
+            CommonHeaderView(title: ~Slug.cast)
             
             ForEach(actors, id: \.self) { item in
                 Text("• \(item)")

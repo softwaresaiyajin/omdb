@@ -5,10 +5,13 @@
       location = "group:"
       name = "ServiceImplementationLayer">
       <FileRef
+         location = "group:Packages/AppCore">
+      </FileRef>
+      <FileRef
          location = "group:Packages/AppUI">
       </FileRef>
       <FileRef
-         location = "group:Packages/AppCore">
+         location = "group:OmdbApp/../Packages/InternationalizationService">
       </FileRef>
       <FileRef
          location = "group:Packages/MovieService">
@@ -20,6 +23,9 @@
    <Group
       location = "container:"
       name = "ServiceAbstractionLayer">
+      <FileRef
+         location = "group:OmdbApp/../Packages/InternationalizationServiceInterface">
+      </FileRef>
       <FileRef
          location = "group:Packages/MovieServiceInterface">
       </FileRef>

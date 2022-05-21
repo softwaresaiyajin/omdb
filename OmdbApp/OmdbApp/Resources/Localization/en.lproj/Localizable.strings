@@ -1,0 +1,10 @@
+"movie_list_search_placeholder_text" = "Search title or year";
+"movie_list_hud_text_empty_query" = "Please enter text";
+"movie_list_hud_text_no_movies_found" = "No movies found";
+
+"movie_detail_header_cast" = "Cast";
+"movie_detail_header_details" = "Details";
+"movie_detail_title_year_released" = "Year Released";
+"movie_detail_title_duration" = "Duration";
+"movie_detail_title_language" = "Language";
+"movie_detail_loading_text" = "Loading Info...";

@@ -1,5 +1,6 @@
 import SwiftUI
 import MovieServiceInterface
+import InternationalizationServiceInterface
 import AppUI
 
 struct MovieDetailView<
@@ -15,7 +16,7 @@ struct MovieDetailView<
         contentView
             .background(Color.primaryBackgroundColor)
             .onAppear(perform: viewModel.load)
-            .navigationTitle(viewModel.item?.title ?? "Loading Info...")
+            .navigationTitle(viewModel.item?.title ?? ~Slug.loadingInfo)
     }
     
     @ViewBuilder
