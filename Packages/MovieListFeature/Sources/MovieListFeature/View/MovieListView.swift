@@ -23,7 +23,10 @@ struct MovieListView<
             contentView
                 .navigationTitle("Omdb Movies")
         }
-        .onAppear(perform: viewModel.load)
+        .onAppear {
+            UITableView.appearance().backgroundColor = .clear
+            viewModel.load()
+        }
         .searchable(
             text: $viewModel.searchText,
             placement: .navigationBarDrawer(displayMode: .always),
@@ -55,8 +58,9 @@ struct MovieListView<
                     MovieItemRow(data: item)
                 }
             }
+            .listRowBackground(Color.rowBackgroundColor)
         }
-        .background(Color.rowBackgroundColor)
+        .background(Color.primaryBackgroundColor.ignoresSafeArea())
         .listStyle(.insetGrouped)
     }
 }
