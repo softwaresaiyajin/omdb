@@ -2,7 +2,7 @@ import MovieServiceInterface
 import OmdbSDK
 import Combine
 
-final class MovieManager { //}: MovieManagerInterface {
+final class MovieManager: MovieManagerInterface {
     private let client: OmdbAPIClient
     
     init(client: OmdbAPIClient) {
@@ -16,23 +16,19 @@ final class MovieManager { //}: MovieManagerInterface {
             text: searchText,
             yearOfRelease: searchText
         )
-        
-        let z = client
+        return client
             .getMovieCollection(filter: filter)
-            .map { data in
-                data.items
-            }
-            
-        
-        
-  
-        
-        
+            .map(Factory.makeMovieItemsMetadata)
+            .eraseToAnyPublisher()
     }
     
-//    func getItem(
-//        id: String
-//    ) -> AnyPublisher<MovieServiceInterface.MovieItemDetailedInfo, Error> {
-//        Just(
-//    }
+    func getItem(
+        id: String
+    ) -> AnyPublisher<MovieServiceInterface.MovieItemDetailedInfo, Error> {
+        let filter = MovieItemFilter(id: id)
+        return client
+            .getMovieItem(filter: filter)
+            .map(Factory.makeMovieItemDetailedInfo)
+            .eraseToAnyPublisher()
+    }
 }

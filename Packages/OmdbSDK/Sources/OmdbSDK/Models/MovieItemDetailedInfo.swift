@@ -24,7 +24,7 @@ public struct MovieItemDetailedInfo: Decodable {
         case boxOffice = "BoxOffice"
         case production = "Production"
         case website = "Website"
-        case responseString = "Response"
+        case response = "Response"
     }
     
     public let id: String
@@ -51,11 +51,7 @@ public struct MovieItemDetailedInfo: Decodable {
     public let boxOffice: String
     public let production: String
     public let website: String
-    private let responseString: String
-    
-    public var response: Bool {
-        responseString == "True"
-    }
+    @StringCodedBool public var response: Bool
 }
 
 public struct MovieRating: Decodable {

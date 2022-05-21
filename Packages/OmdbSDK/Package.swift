@@ -11,6 +11,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/Alamofire/Alamofire", exact: "5.6.1"),
+        .package(path: "../AppCore"),
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
     ],
@@ -20,7 +21,8 @@ let package = Package(
         .target(
             name: "OmdbSDK",
             dependencies: [
-                "Alamofire"
+                "Alamofire",
+                "AppCore"
             ]),
         .testTarget(
             name: "OmdbSDKTests",

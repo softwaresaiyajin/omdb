@@ -19,6 +19,9 @@
       location = "group:"
       name = "ServiceLayer">
       <FileRef
+         location = "group:Packages/AppCore">
+      </FileRef>
+      <FileRef
          location = "group:Packages/MovieService">
       </FileRef>
       <FileRef
