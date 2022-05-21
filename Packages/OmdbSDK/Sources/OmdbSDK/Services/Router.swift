@@ -28,7 +28,7 @@ extension Router: OmdbURLRequestConvertible {
         let info = routeInfo
         let url = Self.baseURL.appendingPathComponent(info.path)
         var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = info.method.rawValue
+        urlRequest.method = info.method
         
         var parameters = info.parameters ?? [:]
         parameters["apikey"] = apiKey
