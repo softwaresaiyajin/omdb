@@ -1,14 +1,14 @@
 import SwiftUI
 import Combine
 
-struct MovieListView<ViewModel: MovieListViewModelInterface>: View {
+public struct MovieListView<ViewModel: MovieListViewModelInterface>: View {
     @ObservedObject private var viewModel: ViewModel
     
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
     }
     
-    var body: some View {
+    public var body: some View {
         NavigationView {
             listView
         }

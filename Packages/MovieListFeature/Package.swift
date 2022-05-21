@@ -13,13 +13,15 @@ let package = Package(
     dependencies: [
         .package(path: "../MovieServiceInterface"),
         .package(path: "../AppUI"),
+        .package(path: "../AppCore"),
     ],
     targets: [
         .target(
             name: "MovieListFeature",
             dependencies: [
                 "MovieServiceInterface",
-                "AppUI"
+                "AppUI",
+                "AppCore"
             ]),
         .testTarget(
             name: "MovieListFeatureTests",

@@ -10,12 +10,13 @@ let package = Package(
             targets: ["AppCore"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/Swinject/Swinject", from: "2.7.1"),
     ],
     targets: [
         .target(
             name: "AppCore",
             dependencies: [
-                
+                "Swinject"
             ]),
         .testTarget(
             name: "AppCoreTests",

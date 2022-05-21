@@ -1,7 +1,7 @@
 import Combine
 import MovieServiceInterface
 
-protocol MovieListViewModelInterface: ObservableObject {
+public protocol MovieListViewModelInterface: ObservableObject {
     var searchText: String { get set }
     var items: [MovieServiceInterface.MovieItemMetadata] { get set }
     func load()

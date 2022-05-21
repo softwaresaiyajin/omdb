@@ -13,8 +13,7 @@ let package = Package(
     dependencies: [
         .package(path: "../MovieServiceInterface"),
         .package(path: "../OmdbSDK"),
-        .package(url: "https://github.com/Swinject/Swinject", from: "2.7.1"),
-        .package(url: "https://github.com/Swinject/SwinjectAutoregistration", from: "2.7.0")
+        .package(path: "../AppCore"),
     ],
     targets: [
         .target(
@@ -22,8 +21,7 @@ let package = Package(
             dependencies: [
                 "MovieServiceInterface",
                 "OmdbSDK",
-                "Swinject",
-                "SwinjectAutoregistration"
+                "AppCore",
             ]),
         .testTarget(
             name: "MovieServiceTests",
