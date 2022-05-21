@@ -3,19 +3,26 @@
    version = "1.0">
    <Group
       location = "container:"
-      name = "Interfaces">
+      name = "AppLayer">
+      <FileRef
+         location = "group:omdb.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "AbstractionLayer">
       <FileRef
          location = "group:Packages/MovieServiceInterface">
       </FileRef>
    </Group>
    <Group
       location = "group:"
-      name = "Services">
+      name = "ServiceLayer">
+      <FileRef
+         location = "group:Packages/MovieService">
+      </FileRef>
       <FileRef
          location = "group:Packages/OmdbSDK">
       </FileRef>
    </Group>
-   <FileRef
-      location = "group:omdb.xcodeproj">
-   </FileRef>
 </Workspace>

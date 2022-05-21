@@ -16,23 +16,27 @@ public final class OmdbAPIClient {
     func doRequest<
         Request: OmdbURLRequestConvertible,
         Response: Decodable
-    >(_ request: Request) -> AnyPublisher<Response, AFError> {
+    >(_ request: Request) -> AnyPublisher<Response, Error> {
         AF
             .request(request.asURLRequest(apiKey: apiKey))
             .publishDecodable(type: Response.self)
             .value()
+            .mapError { error in
+                error
+            }
+            .eraseToAnyPublisher()
     }
 }
 
 // MARK: endpoints
 public extension OmdbAPIClient {
-    func getMovieItem(filter: MovieItemFilter) -> AnyPublisher<MovieItemDetailedInfo, AFError> {
+    func getMovieItem(filter: MovieItemFilter) -> AnyPublisher<MovieItemDetailedInfo, Error> {
         doRequest(Router.getMovieItem(filter: filter))
     }
     
     func getMovieCollection(
         filter: MovieCollectionFilter
-    ) -> AnyPublisher<MovieCollection, AFError> {
+    ) -> AnyPublisher<MovieCollection, Error> {
         doRequest(Router.getMovieCollection(filter: filter))
     }
 }
