@@ -25,7 +25,7 @@ struct Factory {
             poster: data.poster,
             plot: data.plot,
             language: data.language,
-            actors: data.cast.components(separatedBy: ","),
+            actors: data.cast.components(separatedBy: ", "),
             duration: data.runTime
         )
     }

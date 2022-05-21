@@ -3,7 +3,7 @@ import Alamofire
 
 enum Router {
     // MARK: BASEURL
-    private static let baseURL = URL(string: "http://www.omdbapi.com")!
+    private static let baseURL = URL(string: "https://www.omdbapi.com")!
     
     // MARK: EndPoints
     case getMovieItem(filter: MovieItemFilter)

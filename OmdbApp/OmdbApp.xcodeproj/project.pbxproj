@@ -10,6 +10,7 @@
 		7476B20E2838FE010004AE3C /* DI+Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7476B20D2838FE010004AE3C /* DI+Registration.swift */; };
 		7476B211283906210004AE3C /* MainViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7476B210283906210004AE3C /* MainViewFactory.swift */; };
 		7476B213283906F10004AE3C /* MainViewFactory+MovieListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7476B212283906F10004AE3C /* MainViewFactory+MovieListFeature.swift */; };
+		7476B217283943180004AE3C /* MovieDetailFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 7476B216283943180004AE3C /* MovieDetailFeature */; };
 		74DFB44D2838FC1B00CB225F /* OmdbApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DFB44C2838FC1B00CB225F /* OmdbApp.swift */; };
 		74DFB4512838FC1C00CB225F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74DFB4502838FC1C00CB225F /* Assets.xcassets */; };
 		74DFB4542838FC1C00CB225F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74DFB4532838FC1C00CB225F /* Preview Assets.xcassets */; };
@@ -34,6 +35,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74DFB45E2838FCD300CB225F /* MovieListFeature in Frameworks */,
+				7476B217283943180004AE3C /* MovieDetailFeature in Frameworks */,
 				74DFB4602838FCD400CB225F /* MovieService in Frameworks */,
 				74DFB45C2838FCD300CB225F /* AppCore in Frameworks */,
 			);
@@ -123,6 +125,7 @@
 				74DFB45B2838FCD300CB225F /* AppCore */,
 				74DFB45D2838FCD300CB225F /* MovieListFeature */,
 				74DFB45F2838FCD400CB225F /* MovieService */,
+				7476B216283943180004AE3C /* MovieDetailFeature */,
 			);
 			productName = OmdbApp;
 			productReference = 74DFB4492838FC1B00CB225F /* OmdbApp.app */;
@@ -382,6 +385,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7476B216283943180004AE3C /* MovieDetailFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MovieDetailFeature;
+		};
 		74DFB45B2838FCD300CB225F /* AppCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AppCore;

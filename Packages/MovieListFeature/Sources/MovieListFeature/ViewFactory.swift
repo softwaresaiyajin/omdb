@@ -5,7 +5,7 @@ public struct InternalViewFactory {
         externalViewFactory: Factory
     ) -> some View {
         MovieListView(
-            viewModel: MovieListViewModelMock(),
+            viewModel: MovieListViewModel(),
             externalViewFactory: externalViewFactory
         )
     }

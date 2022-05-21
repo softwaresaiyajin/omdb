@@ -1,4 +1,5 @@
 import MovieListFeature
+import MovieDetailFeature
 import SwiftUI
 import AppCore
 
@@ -10,6 +11,6 @@ extension MainViewFactory {
 
 extension MainViewFactory: ExternalViewFactoryInterface {
     func makeMovieDetailView(id: String) -> some View {
-        EmptyView()
+        MovieDetailFeature.InternalViewFactory.makeEntryView(id: id)
     }
 }

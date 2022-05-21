@@ -1,7 +1,8 @@
 import SwiftUI
 import Combine
+import AppUI
 
-public struct MovieListView<
+struct MovieListView<
     ViewModel: MovieListViewModelInterface,
     ExternalViewFactory: ExternalViewFactoryInterface
 >: View {
@@ -16,16 +17,27 @@ public struct MovieListView<
         self.externalViewFactory = externalViewFactory
     }
     
-    public var body: some View {
+    var body: some View {
         NavigationView {
-            listView
+            contentView
+                .navigationTitle("Omdb Movies")
         }
         .onAppear(perform: viewModel.load)
         .searchable(text: $viewModel.searchText, prompt: "Search title or year")
     }
     
+    @ViewBuilder
+    private var contentView: some View {
+        if viewModel.items.isEmpty {
+            emptyView
+        } else {
+            listView
+        }
+    }
+    
     private var emptyView: some View {
-        Text("")
+        Text(viewModel.searchText.isEmpty ? "Please enter text" : "No movies found")
+            .font(.headline)
             .foregroundColor(.black)
     }
     
@@ -39,7 +51,7 @@ public struct MovieListView<
                 }
             }
         }
+        .background(Color.rowBackgroundColor)
         .listStyle(.insetGrouped)
-        .navigationTitle("Omdb Movies")
     }
 }

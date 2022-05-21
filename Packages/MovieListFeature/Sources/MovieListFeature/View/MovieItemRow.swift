@@ -29,10 +29,14 @@ struct MovieItemRow: View {
     private var textView: some View {
         VStack(alignment: .leading, spacing: .spacingS) {
             Text(data.title)
-                .foregroundColor(.primaryLabelColor)
+                .lineLimit(2)
+                .font(.headline)
+                .foregroundColor(.primary)
             
             Text(data.year)
-                .foregroundColor(.secondaryLabelColor)
+                .lineLimit(2)
+                .font(.body)
+                .foregroundColor(.secondary)
         }
     }
 }
