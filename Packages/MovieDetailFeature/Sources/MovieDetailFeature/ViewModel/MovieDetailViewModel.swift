@@ -10,7 +10,7 @@ protocol MovieDetailViewModelInterface: ObservableObject {
 }
 
 final class MovieDetailViewModel: MovieDetailViewModelInterface {
-    @Published var item: MovieItemDetailedInfo?
+    @Published private(set) var item: MovieItemDetailedInfo?
     
     private let id: String
     private let movieManager: MovieManagerInterface

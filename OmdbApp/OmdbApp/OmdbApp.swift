@@ -1,16 +1,17 @@
 import SwiftUI
 import AppCore
-import MovieListFeature
 
 @main
 struct OmdbApp: App {
+    private let mainViewFactory = MainViewFactory()
+    
     init() {
         DI.registerAssemblies()
     }
 
     var body: some Scene {
         WindowGroup {
-            MainViewFactory().makeLaunchView()
+            mainViewFactory.makeLaunchView()
         }
     }
 }

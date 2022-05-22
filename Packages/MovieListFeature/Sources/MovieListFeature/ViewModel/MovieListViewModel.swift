@@ -3,7 +3,7 @@ import Foundation
 import MovieServiceInterface
 import AppCore
 
-public protocol MovieListViewModelInterface: ObservableObject {
+protocol MovieListViewModelInterface: ObservableObject {
     var searchText: String { get set }
     var hasNextPage: Bool { get }
     var items: [MovieServiceInterface.MovieItemMetadata] { get }
