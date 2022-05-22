@@ -27,21 +27,21 @@ extension Router: OmdbURLRequestConvertible {
     func asURLRequest(apiKey: String) -> URLRequest {
         let info = routeInfo
         let url = Self.baseURL.appendingPathComponent(info.path)
-        var urlRequest = URLRequest(url: url)
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: false)!
+        components.queryItems = [
+            .init(name: "apikey", value: apiKey)
+        ]
+
+        var urlRequest = URLRequest(url: try! components.asURL())
         urlRequest.method = info.method
-        
-        var parameters = info.parameters ?? [:]
-        parameters["apikey"] = apiKey
-        
+
         switch info.method {
         case .put, .post:
-            urlRequest = try! JSONEncoding.default.encode(urlRequest, with: parameters)
+            urlRequest = try! JSONEncoding.default.encode(urlRequest, with: info.parameters)
         default:
-            urlRequest = try! URLEncoding.default.encode(urlRequest, with: parameters)
+            urlRequest = try! URLEncoding.default.encode(urlRequest, with: info.parameters)
         }
-        
-        debugPrint("fetching: \(urlRequest)")
-        
+
         return urlRequest
     }
 }

@@ -15,6 +15,7 @@ final class MovieManager: MovieManagerInterface {
     ) -> AnyPublisher<[MovieServiceInterface.MovieItemMetadata], Error> {
         let filter = MovieCollectionFilter(
             text: searchText,
+            type: .init(rawValue: searchText),
             yearOfRelease: searchText,
             page: page
         )
