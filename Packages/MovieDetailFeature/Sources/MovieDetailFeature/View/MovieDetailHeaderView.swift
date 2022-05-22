@@ -30,7 +30,7 @@ struct MovieDetailHeaderView: View {
             content: { image in
                 image
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 150, maxHeight: 223)
             },
             placeholder: {
@@ -41,7 +41,7 @@ struct MovieDetailHeaderView: View {
     
     private var placeholderView: some View {
         Image(systemName: "photo.fill")
-            .aspectRatio(contentMode: .fill)
+            .aspectRatio(contentMode: .fit)
             .frame(maxWidth: 150, maxHeight: 223)
     }
 }
