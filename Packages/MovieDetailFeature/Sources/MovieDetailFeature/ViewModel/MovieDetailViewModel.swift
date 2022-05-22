@@ -50,12 +50,3 @@ final class MovieDetailViewModel: MovieDetailViewModelInterface {
             .store(in: &subscriptions)
     }
 }
-
-extension MovieDetailViewModel {
-    convenience init(id: String) {
-        self.init(
-            id: id,
-            movieManager: DI.resolve(MovieManagerInterface.self)
-        )
-    }
-}
