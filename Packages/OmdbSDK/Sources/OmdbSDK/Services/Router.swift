@@ -39,6 +39,9 @@ extension Router: OmdbURLRequestConvertible {
         default:
             urlRequest = try! URLEncoding.default.encode(urlRequest, with: parameters)
         }
+        
+        debugPrint("fetching: \(urlRequest)")
+        
         return urlRequest
     }
 }

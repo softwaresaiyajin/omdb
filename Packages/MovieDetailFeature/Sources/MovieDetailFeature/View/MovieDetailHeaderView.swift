@@ -6,19 +6,12 @@ struct MovieDetailHeaderView: View {
     let plot: String
     
     var body: some View {
-        HStack(alignment: .top, spacing: .spacingS) {
-            AsyncImage(
-                url: URL(string: posterURL),
-                content: { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(maxWidth: 150, maxHeight: 223)
-                },
-                placeholder: {
-                    ProgressView()
-                }
-            )
+        HStack(alignment: .top, spacing: .spacingM) {
+            if let url = URL(string: posterURL) {
+                makePosterView(url: url)
+            } else {
+                placeholderView
+            }
             
             Text(plot)
                 .foregroundColor(.secondary)
@@ -29,5 +22,26 @@ struct MovieDetailHeaderView: View {
         .padding(.spacingM)
         .background(Color.rowBackgroundColor)
         .insetRounded()
+    }
+    
+    private func makePosterView(url: URL) -> some View {
+        AsyncImage(
+            url: url,
+            content: { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(maxWidth: 150, maxHeight: 223)
+            },
+            placeholder: {
+                placeholderView
+            }
+        )
+    }
+    
+    private var placeholderView: some View {
+        Image(systemName: "photo.fill")
+            .aspectRatio(contentMode: .fill)
+            .frame(maxWidth: 150, maxHeight: 223)
     }
 }

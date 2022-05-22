@@ -1,6 +1,7 @@
 import MovieServiceInterface
 
 final class MovieListViewModelMock: MovieListViewModelInterface {
+    var hasNextPage = true
     var searchText = ""
     var items: [MovieServiceInterface.MovieItemMetadata] = [
         .init(
@@ -25,4 +26,6 @@ final class MovieListViewModelMock: MovieListViewModelInterface {
 
 
     func load() {}
+    
+    func loadNextPage() {}
 }

@@ -47,10 +47,10 @@ public struct MovieItemDetailedInfo: Decodable {
     public let imdbRating: String
     public let imdbVotes: String
     public let type: MovieType
-    public let dvdReleaseDate: String
-    public let boxOffice: String
-    public let production: String
-    public let website: String
+    public let dvdReleaseDate: String?
+    public let boxOffice: String?
+    public let production: String?
+    public let website: String?
     @StringCodedBool public var response: Bool
 }
 

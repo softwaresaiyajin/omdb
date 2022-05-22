@@ -10,11 +10,13 @@ final class MovieManager: MovieManagerInterface {
     }
 
     func getItems(
-        searchText: String
+        searchText: String,
+        page: Int
     ) -> AnyPublisher<[MovieServiceInterface.MovieItemMetadata], Error> {
         let filter = MovieCollectionFilter(
             text: searchText,
-            yearOfRelease: searchText
+            yearOfRelease: searchText,
+            page: page
         )
         return client
             .getMovieCollection(filter: filter)

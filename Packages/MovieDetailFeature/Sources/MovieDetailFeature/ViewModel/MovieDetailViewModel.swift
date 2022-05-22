@@ -36,7 +36,8 @@ final class MovieDetailViewModel: MovieDetailViewModelInterface {
                 receiveCompletion: { [weak self] value in
                     guard let self = self else { return }
                     switch value {
-                    case .failure:
+                    case .failure(let error):
+                        debugPrint("fetch error: \(error.localizedDescription)")
                       self.item = nil
                     case .finished:
                       break

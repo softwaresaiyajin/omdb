@@ -64,6 +64,11 @@ struct MovieListView<
                 }
             }
             .listRowBackground(Color.rowBackgroundColor)
+            
+            if viewModel.hasNextPage {
+                ProgressView()
+                    .onAppear(perform: viewModel.loadNextPage)
+            }
         }
         .background(Color.primaryBackgroundColor.ignoresSafeArea())
         .listStyle(.insetGrouped)

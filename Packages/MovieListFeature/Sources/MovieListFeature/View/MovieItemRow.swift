@@ -7,19 +7,11 @@ struct MovieItemRow: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: .spacingS) {
-            AsyncImage(
-                url: URL(string: data.poster),
-                content: { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(maxWidth: 50, maxHeight: 100)
-                },
-                placeholder: {
-                    ProgressView()
-                }
-            )
-            .frame(maxWidth: 50, maxHeight: 100)
+            if let url = URL(string: data.poster) {
+                makePosterView(url: url)
+            } else {
+                placeholderView
+            }
             
             textView
         }
@@ -38,5 +30,29 @@ struct MovieItemRow: View {
                 .font(.body)
                 .foregroundColor(.secondary)
         }
+    }
+    
+    private func makePosterView(url: URL) -> some View {
+        AsyncImage(
+            url: url,
+            content: { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 50, maxHeight: 100)
+            },
+            placeholder: {
+                Image(systemName: "photo.fill")
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 50, maxHeight: 100)
+            }
+        )
+        .frame(maxWidth: 50, maxHeight: 100)
+    }
+    
+    private var placeholderView: some View {
+        Image(systemName: "photo.fill")
+            .aspectRatio(contentMode: .fit)
+            .frame(maxWidth: 50, maxHeight: 100)
     }
 }
