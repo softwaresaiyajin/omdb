@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:"
+      name = "ServiceImplementationLayer">
+      <FileRef
+         location = "group:Packages/AppCore">
+      </FileRef>
+      <FileRef
+         location = "group:Packages/AppUI">
+      </FileRef>
+      <FileRef
+         location = "group:OmdbApp/../Packages/InternationalizationService">
+      </FileRef>
+      <FileRef
+         location = "group:Packages/MovieService">
+      </FileRef>
+      <FileRef
+         location = "group:Packages/OmdbSDK">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "ServiceAbstractionLayer">
+      <FileRef
+         location = "group:OmdbApp/../Packages/InternationalizationServiceInterface">
+      </FileRef>
+      <FileRef
+         location = "group:Packages/MovieServiceInterface">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "FeatureLayer">
+      <FileRef
+         location = "group:OmdbApp/../Packages/MovieDetailFeature">
+      </FileRef>
+      <FileRef
+         location = "group:Packages/MovieListFeature">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "AppLayer">
+      <FileRef
+         location = "group:OmdbApp/OmdbApp.xcodeproj">
+      </FileRef>
+   </Group>
+</Workspace>
