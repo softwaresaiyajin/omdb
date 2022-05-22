@@ -7,6 +7,7 @@ import MovieDetailFeature
 extension DI {
     static func registerAssemblies() {
         initialize(assemblies: [
+            AppAssembly(),
             MovieServiceAssembly(),
             MovieListFeatureAssembly(),
             MovieDetailFeatureAssembly(),
