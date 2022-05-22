@@ -28,6 +28,4 @@ final class TranslationManager: TranslationManagerInterface {
             comment: ""
         )
     }
-    
-    
 }
